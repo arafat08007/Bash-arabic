@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ContinuePaymentActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/colorBlue" />
+
+        <LinearLayout
+            android:id="@+id/titleService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/cairo_bold700"
+                android:gravity="center"
+                android:text="@string/continue_payment"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/cairo_regular400"
+                android:gravity="center"
+                android:text="@string/choose_payment"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_margin="@dimen/_20sdp"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/linearPay"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMada"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2sdp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_2sdp">
+
+                    <ImageView
+                        android:id="@+id/selectedMada"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/dotted_blue_rectangle"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/image_7" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardVisa"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_2sdp">
+
+                    <ImageView
+                        android:id="@+id/selectedVisa"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/dotted_blue_rectangle"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/ic_visa" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMasterCard"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_2sdp">
+
+                    <ImageView
+                        android:id="@+id/selectedMasterCard"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/dotted_blue_rectangle"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/ic_master_card" />
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cardType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:text="@string/pay_mada"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <app.bash.utilitis.FormattedNumberEditText
+                        android:id="@+id/edtCardNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_credit_card"
+                        android:drawablePadding="@dimen/_7sdp"
+                        android:hint="@string/card_number"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textCursorDrawable="@color/colorAccent"
+                        android:textSize="@dimen/_14sdp"
+                        app:groupSeparator="-" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <EditText
+                        android:id="@+id/edtFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_name"
+                        android:drawablePadding="@dimen/_7sdp"
+                        android:hint="@string/name_caps"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textCursorDrawable="@color/colorAccent"
+                        android:textSize="@dimen/_14sdp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        app:boxStrokeColor="@color/colorAccent"
+                        app:hintTextColor="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/edtDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_calander"
+                            android:drawablePadding="@dimen/_7sdp"
+                            android:hint="@string/end_date"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextPrimary"
+                            android:textCursorDrawable="@color/colorAccent"
+                            android:textSize="@dimen/_14sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="@dimen/_4sdp"
+                        android:layout_height="@dimen/_20sdp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        app:boxStrokeColor="@color/colorAccent"
+                        app:hintTextColor="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/edtCVV"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_calander"
+                            android:drawablePadding="@dimen/_7sdp"
+                            android:hint="@string/cvv"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextPrimary"
+                            android:textCursorDrawable="@color/colorAccent"
+                            android:textSize="@dimen/_14sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        app:boxStrokeColor="@color/colorAccent"
+                        app:hintTextColor="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/edtStreet"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_calander"
+                            android:drawablePadding="@dimen/_7sdp"
+                            android:hint="@string/street"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextPrimary"
+                            android:textCursorDrawable="@color/colorAccent"
+                            android:textSize="@dimen/_14sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="@dimen/_4sdp"
+                        android:layout_height="@dimen/_20sdp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        app:boxStrokeColor="@color/colorAccent"
+                        app:hintTextColor="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/edtCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_calander"
+                            android:drawablePadding="@dimen/_7sdp"
+                            android:hint="@string/city"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextPrimary"
+                            android:textCursorDrawable="@color/colorAccent"
+                            android:textSize="@dimen/_14sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        app:boxStrokeColor="@color/colorAccent"
+                        app:hintTextColor="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/edtState"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_calander"
+                            android:drawablePadding="@dimen/_7sdp"
+                            android:hint="@string/state"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextPrimary"
+                            android:textCursorDrawable="@color/colorAccent"
+                            android:textSize="@dimen/_14sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="@dimen/_4sdp"
+                        android:layout_height="@dimen/_20sdp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        app:boxStrokeColor="@color/colorAccent"
+                        app:hintTextColor="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/edtCountryCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_calander"
+                            android:drawablePadding="@dimen/_7sdp"
+                            android:hint="@string/country_code"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextPrimary"
+                            android:textCursorDrawable="@color/colorAccent"
+                            android:textSize="@dimen/_14sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <EditText
+                        android:id="@+id/edtPostCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_name"
+                        android:drawablePadding="@dimen/_7sdp"
+                        android:hint="@string/post_code"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textCursorDrawable="@color/colorAccent"
+                        android:textSize="@dimen/_14sdp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/checkSaveCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:buttonTint="@color/colorAccent"
+                    android:text="@string/save_the_card" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearPay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlue"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/cairo_bold700"
+            android:gravity="center"
+            android:text="@string/pay"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSubTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150 "
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text=" SAR"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

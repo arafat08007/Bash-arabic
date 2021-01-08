@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RateAppActivity">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rate_our_app"
+        android:textSize="@dimen/_13sdp"
+       android:layout_marginTop="@dimen/_100sdp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlue"/>
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:text="Tell Us How Our App is Doing"
+        android:gravity="center"
+        android:textSize="@dimen/_13sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/colorTextSecondary"/>
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_below="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:numStars="5"
+        android:layout_marginLeft="@dimen/_5sdp"
+        />
+
+    <EditText
+        android:id="@+id/edtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_below="@+id/ratingBar"
+        android:maxLines="5"
+        android:gravity="start"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_25sdp"
+        android:layout_marginRight="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:hint="@string/how_was_your_experience_with_app"
+        android:background="@drawable/btn_rounded_gray"/>
+</RelativeLayout>

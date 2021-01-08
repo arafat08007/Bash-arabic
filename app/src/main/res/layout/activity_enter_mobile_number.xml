@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <!--Sohel Khan Indore-->
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_bar"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/phone_number"
+            android:textColor="@color/colorBlue"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/enter_your_phone_number"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal">
+
+            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:ccp_countryPreference="IN"
+                app:ccp_defaultCode="966"
+                app:ccp_defaultNameCode="SA"
+                app:ccp_hideNameCode="true"
+                app:ccp_hidePhoneCode="true"
+                app:ccp_textColor="@color/colorTextSecondary"
+                app:ccp_textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/edit_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/ccp"
+                android:backgroundTint="@color/colorTextSecondary"
+                android:cursorVisible="true"
+                android:hint="5XXXXXXXX"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="15"
+                android:textColor="@color/colorTextSecondary"
+                android:textColorHint="@color/colorTextSecondary"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLoginPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/btn_bg"
+            android:text="@string/log_in_with_phone_number"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
+</RelativeLayout>

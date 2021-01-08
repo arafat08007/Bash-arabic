@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_correct_yellow"/>
+    <TextView
+        android:id="@+id/tvPlzWait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:text="@string/payment_hold"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorTextPrimary"/>
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPlzWait"
+        android:text="@string/payment_have_notify"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="@dimen/_13sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/colorTextSecondary"/>
+    <TextView
+        android:id="@+id/tvOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMessage"
+        android:text="@string/payment_checkorder"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_13sdp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlue"/>
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="@string/home"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/colorPrimary"/>
+
+</RelativeLayout>

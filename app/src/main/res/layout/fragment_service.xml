@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ServiceFragment"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvNoService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_4sdp"
+        android:singleLine="true"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:text="@string/no_service"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"/>
+</RelativeLayout>

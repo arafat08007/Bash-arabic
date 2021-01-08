@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">ftp.bash-g.com</domain>
+        <domain includeSubdomains="true">159.89.208.101</domain>
+        <domain includeSubdomains="true">128.199.179.158</domain>
+        <domain includeSubdomains="true">graph.facebook.com</domain>
+    </domain-config>
+</network-security-config>

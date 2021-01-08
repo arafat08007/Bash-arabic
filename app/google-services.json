@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "183414251367",
+    "firebase_url": "https://bawabat-almoamalat.firebaseio.com",
+    "project_id": "bawabat-almoamalat",
+    "storage_bucket": "bawabat-almoamalat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183414251367:android:8964d17ca5260ebf1a99c2",
+        "android_client_info": {
+          "package_name": "app.bash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183414251367-cdd1cj5s8vmen356ogffs0dmv716m9l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWP3LSFYd4LUhZpdSuG0j51oP6776k_jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183414251367-cdd1cj5s8vmen356ogffs0dmv716m9l4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "183414251367-f5uvgu932969rih8cl7sevubb4l0scmj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vb.Bawabat-almoamalat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
